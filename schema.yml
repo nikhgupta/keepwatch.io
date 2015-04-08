@@ -1,0 +1,33 @@
+# Generic client of the service.
+user:
+  has_many: profiles
+  has_many: trackers # through profiles
+
+# Web 2.0 property websites, generic wrappers for profiles, etc.
+provider:
+  has_many: profiles
+
+trackable:
+  belongs_to: provider
+  attributes:
+    - type      # STI
+    - require_authentication?
+
+tracker:
+  belongs_to: profile
+  belongs_to: trackable
+  has_many:   logs
+
+# A web 2.0 property (or anything) that we monitor.
+profile:
+  belongs_to: user
+  belongs_to: provider
+  has_many:   trackers
+  has_many:   logs # through: trackers
+  attributes: [ api_token, api_secret ]
+
+# Log is data for a particular profile when it is checked.
+# Logs older than 30 days should be deleted.
+log:
+  belongs_to: profile
+  belongs_to: tracker
