@@ -51,3 +51,5 @@ gem 'rspec-rails', group: [:test, :development]
 gem 'pundit'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'sidekiq'
+gem 'sinatra', require: false
