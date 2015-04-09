@@ -43,13 +43,37 @@ group :development, :test do
   gem 'spring'
 end
 
-
-gem 'pry-rails', group: [:test, :development]
-gem 'bootstrap-generators'
-gem 'high_voltage'
-gem 'rspec-rails', group: [:test, :development]
+# Added via Creation gem.
+gem 'draper'
 gem 'pundit'
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
 gem 'sidekiq'
+gem 'high_voltage'
+gem 'acts_as_tenant'
+gem 'bootstrap-generators'
 gem 'sinatra', require: false
+gem 'activeadmin', github: 'activeadmin'
+gem 'pry-rails', group: [:test, :development]
+
+group :test do
+  gem 'rspec'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'poltergeist'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'simplecov', require: false
+  # gem 'coveralls', require: false
+  # gem 'cucumber-rails', require: false
+
+  # for detecting changes in the filesystem
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  # for displaying notices
+  gem 'growl', :require => false
+  gem 'libnotify', :require => false
+  gem 'terminal-notifier-guard', :require => false
+end
