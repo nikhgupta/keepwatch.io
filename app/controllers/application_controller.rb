@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   set_current_tenant_through_filter
 
-  prepend_before_filter :find_tenant
+  before_filter :find_tenant
 
   def find_tenant
     set_current_tenant(current_user)

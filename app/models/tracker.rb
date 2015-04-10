@@ -16,6 +16,6 @@ class Tracker < ActiveRecord::Base
   validates_presence_of :trackable
 
   def to_s
-    "#{campaign}/#{provider}: #{profile.identifier} (#{trackable.type.titleize})"
+    "#{campaign}/#{provider}: #{profile.identifier} (#{trackable.type.to_s.titleize})"
   end
 end

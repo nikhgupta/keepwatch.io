@@ -18,6 +18,10 @@ class Authentication < ActiveRecord::Base
   def to_s
     "#{profile} [#{type.to_s.gsub(/Authentication$/, '')}]"
   end
+
+  def self.policy_class
+    AuthenticationPolicy
+  end
 end
 
 class APIAuthentication < Authentication

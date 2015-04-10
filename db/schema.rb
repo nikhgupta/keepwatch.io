@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20150409131553) do
   create_table "trackables", force: :cascade do |t|
     t.integer  "provider_id"
     t.string   "type"
-    t.boolean  "auth_dependent"
+    t.string   "auth_dependent"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
